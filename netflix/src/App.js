@@ -1,13 +1,29 @@
+import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css';
+import './styles/mainstyle.css'
+import Navbar from './components/Navbar'
+import SingleMovie from './components/SingleMovie'
+import MovieList from './components/MovieList';
 import Footer from "./components/Footer";
+
+
+
 
 function App() {
   return (
-    <div>
-        <Footer />
-    </div>
-  );
+
+   <>
+
+<Navbar/>
+
+<SingleMovie/>
+
+       <Footer />
+   
+   
+   </>
+  )
+
 }
 
 export default App;

@@ -1,0 +1,27 @@
+      .background{
+        background-color: #141515;
+        color: #fcfbf7;
+      }
+      .svg {
+        color: #646464;
+      }
+      .button-gn{
+        border: solid white 1px;
+        color: #646464;
+      }
+      .button-gl{
+        border: solid grey 1px;
+        color: #646464;
+        border-radius: 0;
+      }
+      .picture{
+        width: 100%;
+        height: auto;
+      }
+      .picture:hover{
+          width: 150%;
+          position: absolute;
+          z-index: 1;
+          box-shadow: 100px 100px 100px black;
+        
+      }
