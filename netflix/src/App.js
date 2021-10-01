@@ -21,12 +21,12 @@ function App() {
 
 <Container fluid>
 
-<h4 class="pt-4">Action</h4>
+<h4 class="pt-4">Search a movie</h4>
 <MovieListWithSearch/>
-{/* <h4 class="pt-4">Action</h4>
+<h4 class="pt-4">Action</h4>
 <MovieList/>
 <h4 class="pt-4">Action</h4>
-<MovieList/> */}
+<MovieList/>
 
 </Container>
 

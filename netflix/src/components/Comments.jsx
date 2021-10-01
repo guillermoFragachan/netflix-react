@@ -1,5 +1,5 @@
 import React from "react";
-
+import Form from 'react-bootstrap/Form'
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 
@@ -39,7 +39,8 @@ class Comments extends React.Component {
     }
   };
 
-  sendComment = async (comment) => {
+  sendComment = async (comment, e) => {
+    e.preventDefault()
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/comments/",
@@ -55,8 +56,9 @@ class Comments extends React.Component {
       );
       if (response.ok) {
         this.fetchComments(this.props.id);
+
       } else {
-        console.log("nope");
+        alert('You cannot add an empty string')
       }
     } catch {
       console.log("error");
@@ -79,9 +81,10 @@ class Comments extends React.Component {
             })
           //return <SingleComment element={e._id} key={e._id} comment=/>
         }
-
+        <Form>
         <FormControl
           placeholder="comment"
+        
           onChange={(event) => {
             console.log(this.state.comment);
 
@@ -94,12 +97,13 @@ class Comments extends React.Component {
             });
           }}
         />
-        <Button onClick={()=>{
+        <Button onClick={(event)=>{
             
-            this.sendComment(this.state.addedComment) 
+            this.sendComment(this.state.addedComment, event) 
         }} ariant="primary" size="sm">
           Send
         </Button>
+        </Form>
        
       </>
     );
