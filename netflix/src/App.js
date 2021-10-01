@@ -23,17 +23,18 @@ function App() {
 
 <h4 class="pt-4">Search a movie</h4>
 <MovieListWithSearch/>
-<h4 class="pt-4">Action</h4>
-<MovieList/>
-<h4 class="pt-4">Action</h4>
-<MovieList/>
+<h4 class="pt-4">Scary Movie</h4>
+<MovieList query = "scary%20movie" / >
+<h4 class="pt-4">Harry Potter</h4>
+<MovieList  query = "harry%20potter" />
 
 </Container>
 
 
    
-{/*    
    <Footer/> */}
+   
+   <Footer/>
    </>
   )
 }

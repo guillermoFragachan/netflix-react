@@ -2,7 +2,7 @@ function Footer() {
   return (
     <div className="container-fluid">
       <footer className="pt-5">
-        <div className="row">
+        <div className="row d-flex justify-content-center">
           <ul className="list-unstyled d-flex">
             <li className="ms-3 pl-4 svg">
               <svg
@@ -55,7 +55,7 @@ function Footer() {
           </ul>
         </div>
 
-        <div className="row">
+        <div className="row d-flex justify-content-center">
           <div className="col-2 ">
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
@@ -142,12 +142,12 @@ function Footer() {
           </div>
         </div>
 
-        <div className="pt-3">
+        <div className="pt-3 d-flex justify-content-center">
           <a className=" btn button-gn ">
             <span className="d-inline-block svg ">Service code</span>
           </a>
         </div>
-        <div className="d-flex justify-content-between py-4  svg my-4 background">
+        <div className="d-flex justify-content-around py-4  svg my-4 background">
           <p>© 1997-2021 Netflix, Inc. All rights reserved.</p>
         </div>
       </footer>
