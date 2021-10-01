@@ -4,6 +4,7 @@ import './styles/mainstyle.css'
 import Navbar from './components/Navbar'
 import SingleMovie from './components/SingleMovie'
 import MovieList from './components/MovieList';
+import Footer from "./components/Footer";
 
 
 
@@ -17,7 +18,7 @@ function App() {
 
 <SingleMovie/>
 
-   
+       <Footer />
    
    
    </>
