@@ -15,8 +15,10 @@ class MovieList extends Component {
 
   render() {
     return (
-      <div>
-        <div className="d-flex flex-wrap justify-content-around">
+      <div id="horror" className="row">
+    
+
+       
           {
           this.state.movies.length > 0 &&
               //  console.log(this.state.movies)
@@ -29,7 +31,7 @@ class MovieList extends Component {
           
           
           }
-        </div>
+       
       </div>
     );
   }

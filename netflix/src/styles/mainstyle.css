@@ -25,3 +25,76 @@
           box-shadow: 100px 100px 100px black;
         
       }
+
+      body{
+        background-color: black;
+        color: white;
+    }
+    .container{
+        margin: auto;
+        padding: auto;
+    }
+    .row{
+        
+        margin: auto;
+        padding: auto;
+    }
+    .nowrap {
+        white-space: nowrap;
+      }
+      
+    hr{
+        color: white;
+      }
+      .background{
+        background-color: #141515;
+        color: #fcfbf7;
+      }
+      .svg {
+        color: #646464;
+      }
+      .button-gn{
+        border: solid white 1px;
+        color: #646464;
+        border-radius: 0;
+      }
+      .button-white{
+        background-color: white;
+        border: solid white 1px;
+        color: #646464;
+        border-radius: 0;
+    }
+        .btn{
+    font-weight: bold ;
+    border-radius: 0;
+    }
+    
+    .icon{
+      position: absolute;
+      color: black;
+      left: 15px;
+      bottom: 0;
+    }
+    
+    hr {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border: 0;
+      border-top: 1px solid lightslategray;
+    }
+    
+    h6{
+      color: #8f8f8f;
+      font-weight: bold;
+    }
+    
+    .button-gl{
+        border: solid grey 1px;
+        color: #646464;
+        border-radius: 0;
+      }
+
+      .img-size{
+        height: 150px;
+        object-fit: cover;
+      }

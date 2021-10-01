@@ -1,16 +1,13 @@
 import { Component } from "react";
-
+import SingleMovie from "./SingleMovie";
+import Form from 'react-bootstrap/Form'
 class MovieListWithSearch extends Component {
   state = {
     query: [],
-    movies: [],
+    movies: [0],
   };
 
-  search = (e) => {
-    this.setState({
-      query: e.target.value,
-    });
-  };
+  
 
   filterMovieList = (list) => {
     const isFound = list.filter((movie) =>
@@ -21,12 +18,17 @@ class MovieListWithSearch extends Component {
     return isFound;
   };
 
-  componentDidMount = async () => {
-    const response = await fetch(
-      "http://www.omdbapi.com/?apikey=c73430e0&s=" + this.state.query
+  fetching= async (query) =>{
+    let response = await fetch(
+      "http://www.omdbapi.com/?apikey=c73430e0&s=" + query
     );
-    const data = await response.json();
-    this.setState({ movies: data });
+    let data = await response.json();
+    this.setState({ movies: data.Search });
+    console.log(this.state.movies)
+  }
+
+  componentDidMount = async () => {
+    this.fetching('harry')
   };
 
   render() {
@@ -38,31 +40,56 @@ class MovieListWithSearch extends Component {
               type="text"
               placeholder="Search here"
               value={this.state.query}
-              onChange={(e) => this.search(e)}
+              onChange={(e) => this.setState({
+                query: e.target.value,
+              }) }
+              onClick={(e)=>{
+                
+                e.target.value.length > 3 &&
+                this.fetching(this.state.query)}}
             />
           </Form.Group>
         </div>
 
-        <div className="d-flex flex-wrap justify-content-around">
-          {!this.state.query
-            ? this.props.list.map((movie) => (
-                <SingleBook
-                  asin={books.asin}
-                  image={books.img}
-                  title={books.title}
-                />
-              ))
-            : this.filterBookList(this.props.list).map((books) => (
-                <SingleBook
-                  asin={books.asin}
-                  image={books.img}
-                  title={books.title}
-                />
-              ))}
-        </div>
+        <div id="horror" className="row">
+    
+        {
+          this.state.movies.length > 0 &&
+              //  console.log(this.state.movies)
+
+          this.state.movies.map((movie) => (
+            <SingleMovie img={movie.Poster} id={movie.imdbID} />
+          ))
+        
+          
+          
+          
+          }
+       
+         
+       
       </div>
+        </div>
     );
   }
 }
+
+
+
+   {/* {!this.state.query
+            ? this.props.list.map((movie) => (
+                <SingleMovie
+                  id={movie.imdbID}
+                  img={movie.Poster}
+                
+                />
+              ))
+            : this.filterMoviesList(this.props.list).map((movies) => (
+              <SingleMovie
+                  id={movie.imdbID}
+                  img={movie.Poster}
+                
+                />
+              ))} */}
 
 export default MovieListWithSearch;

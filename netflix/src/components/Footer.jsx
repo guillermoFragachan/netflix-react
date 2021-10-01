@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div className="container">
+    <div className="container-fluid">
       <footer className="pt-5">
         <div className="row">
           <ul className="list-unstyled d-flex">
