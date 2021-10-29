@@ -9,10 +9,11 @@ class MovieList extends Component {
 
   componentDidMount = async () => {
     const response = await fetch(
-      "http://www.omdbapi.com/?apikey=c73430e0&s=" + this.props.query
+      "http://localhost:3001/media/"
     );
     const data = await response.json();
-    this.setState({ movies: data.Search, loading: false });
+    this.setState({ movies: data, loading: false });
+    console.log(data)
   };
 
   render() {

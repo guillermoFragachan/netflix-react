@@ -16,20 +16,15 @@ class Comments extends React.Component {
   fetchComments = async (query) => {
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/comments/" + query,
+        "http://localhost:3001/media/" + query,
         {
-          method: "GET",
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTRiMWM5NDRiYjUzZDAwMTViMTllY2MiLCJpYXQiOjE2MzMwMDE1NzksImV4cCI6MTYzNDIxMTE3OX0.WGqdgb0uXW7-MCUC94FOKrTEainfaSnnNBv6Le-F7uA",
-            "Content-Type": "application/json",
-          },
+          method: "GET"
         }
       );
       if (response.ok) {
         let data = await response.json();
         this.setState({
-          comments: data,
+          comments: data[0].reviews,
         });
       } else {
         console.log("no");
@@ -39,11 +34,11 @@ class Comments extends React.Component {
     }
   };
 
-  sendComment = async (comment, e) => {
+  sendComment = async (comment, e, query) => {
     e.preventDefault()
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/comments/",
+        "http://localhost:3001/media/" + query + '/reviews',
         {
           method: "POST",
           body: JSON.stringify(comment),
@@ -99,7 +94,7 @@ class Comments extends React.Component {
         />
         <Button onClick={(event)=>{
             
-            this.sendComment(this.state.addedComment, event) 
+            this.sendComment(this.state.addedComment, event, this.props.id) 
         }} ariant="primary" size="sm">
           Send
         </Button>
