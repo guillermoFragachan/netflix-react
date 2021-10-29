@@ -13,7 +13,7 @@ class MovieListWithSearch extends Component {
     this.setState({ loading: true });
     try {
       let response = await fetch(
-        "http://localhost:3001/media/" + query
+        "https://netbackend.herokuapp.com/media/" + query
       );
       if (response.ok) {
         let data = await response.json();

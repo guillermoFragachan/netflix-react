@@ -16,7 +16,7 @@ class Comments extends React.Component {
   fetchComments = async (query) => {
     try {
       let response = await fetch(
-        "http://localhost:3001/media/" + query,
+        "https://netbackend.herokuapp.com/media/" + query,
         {
           method: "GET"
         }
@@ -38,7 +38,7 @@ class Comments extends React.Component {
     e.preventDefault()
     try {
       let response = await fetch(
-        "http://localhost:3001/media/" + query + '/reviews',
+        "https://netbackend.herokuapp.com/media/" + query + '/reviews',
         {
           method: "POST",
           body: JSON.stringify(comment),

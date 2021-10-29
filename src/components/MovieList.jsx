@@ -9,7 +9,7 @@ class MovieList extends Component {
 
   componentDidMount = async () => {
     const response = await fetch(
-      "http://localhost:3001/media/"
+      "https://netbackend.herokuapp.com/media/"
     );
     const data = await response.json();
     this.setState({ movies: data, loading: false });
