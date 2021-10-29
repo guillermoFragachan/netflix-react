@@ -13,11 +13,11 @@ class MovieListWithSearch extends Component {
     this.setState({ loading: true });
     try {
       let response = await fetch(
-        "http://www.omdbapi.com/?apikey=c73430e0&s=" + query
+        "http://localhost:3001/media/" + query
       );
       if (response.ok) {
         let data = await response.json();
-        this.setState({ movies: data.Search, loading: false });
+        this.setState({ movies: data, loading: false });
         console.log(this.state.loading);
       } else {
         alert("Something went wrong :(");
@@ -29,7 +29,7 @@ class MovieListWithSearch extends Component {
   };
 
   componentDidMount = async () => {
-    this.fetching("32132132131");
+    this.fetching("3213123");
   };
 
   render() {
