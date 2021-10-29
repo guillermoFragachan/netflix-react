@@ -34,11 +34,11 @@ class Comments extends React.Component {
     }
   };
 
-  sendComment = async (comment, e) => {
+  sendComment = async (comment, e, query) => {
     e.preventDefault()
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/comments/",
+        "http://localhost:3001/media/" + query + '/reviews',
         {
           method: "POST",
           body: JSON.stringify(comment),
@@ -94,7 +94,7 @@ class Comments extends React.Component {
         />
         <Button onClick={(event)=>{
             
-            this.sendComment(this.state.addedComment, event) 
+            this.sendComment(this.state.addedComment, event, this.props.id) 
         }} ariant="primary" size="sm">
           Send
         </Button>
